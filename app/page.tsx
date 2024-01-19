@@ -6,12 +6,12 @@ import { HeroProps } from "@/lib/types";
 import { useState } from "react";
 
 export default function Home() {
-  const [heroData, setHeroData] = useState<HeroProps>()
+  const [heroData, setHeroData] = useState<HeroProps | null>()
   const [selectedRole, setSelectedRole] = useState<string | undefined>("all"); // State to store selected role
   const [filteredHeroes, setFilteredHeroes] = useState<HeroProps[]>(heroes); // State to store filtered heroes based on role
 
   const handleRoleSelect = (role: string) => {
-    setHeroData(undefined)
+    setHeroData(null)
     setSelectedRole(role);
 
     // If no role is selected, reset to show all heroes
