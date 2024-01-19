@@ -8,11 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      colors: {
+        "accent": "#f06414",
+        "background": "#1b1b1f",
+        "lightgray": "#32363f",
+        'lightlightgray': "#555c6b",
+        "card": "#202127"
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

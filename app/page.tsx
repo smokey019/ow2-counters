@@ -1,121 +1,65 @@
-import heroes from "./data/heroes.json";
+'use client'
+import Image from 'next/image'
+import MainLayout from "@/components/MainLayout";
+import heroes from "@/data/heroes.json";
+import { HeroProps } from "@/lib/types";
+import { useState } from "react";
 
 export default function Home() {
+  const [heroData, setHeroData] = useState<HeroProps>()
+  const [selectedRole, setSelectedRole] = useState<string | undefined>("all"); // State to store selected role
+  const [filteredHeroes, setFilteredHeroes] = useState<HeroProps[]>(heroes); // State to store filtered heroes based on role
+
+  const handleRoleSelect = (role: string) => {
+    setSelectedRole(role);
+
+    // If no role is selected, reset to show all heroes
+    if (role === 'all') {
+      setFilteredHeroes(heroes);
+      return;
+    }
+
+    // Filter heroes based on the selected role
+    const filtered = heroes.filter(hero => hero.role === role);
+    setFilteredHeroes(filtered);
+  }
+
+  const RoleSelect = ({ role }: { role: string }) => (
+    <button
+      onClick={() => handleRoleSelect(role)}
+      className={`flex items-center ${selectedRole === role ? 'bg-accent' : 'bg-lightgray'} px-4 py-2 rounded-lg skew-x-[20deg]`}
+    >
+      <span className='-skew-x-[20deg]'>
+        {role.charAt(0).toUpperCase() + role.slice(1)}
+      </span>
+    </button>
+  )
+
   return (
-    <main className="flex-1 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 p-4 md:p-6">
-      {heroes.map((item) => (
-        <div
-          key={item.key}
-          className="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2"
-        >
-          <div key={item.key} className="bg-gray-800 p-4 dark:bg-gray-950">
-            <div key={item.key} className="flex justify-between items-center">
-              <h3 key={item.key} className="font-bold text-xl text-white">
-                {item.name}
-              </h3>
-              <button
-                key={item.key}
-                className="bg-red-950 text-white rounded-full p-1 m-2 hover:bg-red-600 transition-colors duration-200"
-              >
-                {`\n                ❤\u{fe0f}\n              `}
-              </button>
-            </div>
-            <img
-              key={item.key}
-              alt={item.name}
-              className="object-cover w-full h-64"
-              height={400}
-              src={item.portrait}
-              style={{
-                aspectRatio: "500/400",
-                objectFit: "cover",
-              }}
-              width={500}
-            />
-            <h4
-              key={item.key}
-              className="font-semibold text-lg md:text-xl text-green-300 my-1"
-            >
-              Counters:
-            </h4>
-            <div key={item.key} className="grid grid-cols-2 gap-2">
-              {item.counters.map((counters) => (
-                <div
-                  key={counters + "_counters"}
-                  className="flex items-center gap-2"
-                >
-                  <img
-                    key={
-                      heroes.find((element) => element.key === counters)?.key
-                    }
-                    alt={
-                      heroes.find((element) => element.key === counters)?.name
-                    }
-                    className="object-cover w-10 h-10 rounded-full"
-                    height={50}
-                    src={
-                      heroes.find((element) => element.key === counters)
-                        ?.portrait
-                    }
-                    style={{
-                      aspectRatio: "50/50",
-                      objectFit: "cover",
-                    }}
-                    width={50}
-                  />
-                  <span
-                    key={
-                      heroes.find((element) => element.key === counters)?.key
-                    }
-                    className="text-gray-300"
-                  >
-                    {heroes.find((element) => element.key === counters)?.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <h4 className="font-semibold text-lg md:text-xl text-red-300 my-1">
-              Countered By:
-            </h4>
-            <div className="grid grid-cols-2 gap-2">
-              {item.countered_by.map((counters) => (
-                <div
-                  key={counters + "_counters"}
-                  className="flex items-center gap-2"
-                >
-                  <img
-                    key={
-                      heroes.find((element) => element.key === counters)?.key
-                    }
-                    alt={
-                      heroes.find((element) => element.key === counters)?.name
-                    }
-                    className="object-cover w-10 h-10 rounded-full"
-                    height={50}
-                    src={
-                      heroes.find((element) => element.key === counters)
-                        ?.portrait
-                    }
-                    style={{
-                      aspectRatio: "50/50",
-                      objectFit: "cover",
-                    }}
-                    width={50}
-                  />
-                  <span
-                    key={
-                      heroes.find((element) => element.key === counters)?.key
-                    }
-                    className="text-gray-300"
-                  >
-                    {heroes.find((element) => element.key === counters)?.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
+    <MainLayout>
+      <div className='mb-12 px-20 rounded-xl'>
+        <div className='flex justify-center space-x-4 mt-8 font-semibold'>
+          <RoleSelect role="all" />
+          <RoleSelect role="tank" />
+          <RoleSelect role="support" />
+          <RoleSelect role="damage" />
         </div>
-      ))}
-    </main>
+        <div className="flex justify-center items-center gap-4 flex-wrap mt-8">
+          {filteredHeroes.map((hero: HeroProps) => (
+            <div key={hero.id} className={`w-14 h-14 skew-x-[20deg] overflow-hidden transition-transform transform hover:scale-110 border-2 ${heroData?.id === hero.id ? 'border-accent' : 'border-lightgray'} hover:border-accent shadow-lg shadow-black/10 rounded-lg`}>
+              <Image
+                onClick={() => setHeroData(hero)} 
+                className={`object-cover -skew-x-[30deg]`} 
+                src={`/images/heroes/${hero.key}.png`} 
+                alt={hero.name}
+                width={56}
+                height={56}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <p className="text-2xl text-center">Selected: <span>{heroData ? heroData.name : "None"}</span></p>
+    </MainLayout>
   );
 }
