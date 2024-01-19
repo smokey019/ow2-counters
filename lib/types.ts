@@ -2,9 +2,17 @@ export type HeroProps = {
     id: number
     key: string
     name: string
-    portrait: string
+    portrait?: string
     role: string
-    counters: string[]
-    countered_by: string[]
+    counters: HeroCountersProps[]
+    countered_by: HeroCountersProps[]
+    notes: string
+}
+
+export type HeroCountersProps = {
+    id: number
+    key: string
+    name: string
+    role: string
     notes: string
 }

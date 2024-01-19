@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "accent": "#f06414",
+        "accent": "#6374ae",
         "background": "#1b1b1f",
         "lightgray": "#32363f",
         'lightlightgray': "#555c6b",
