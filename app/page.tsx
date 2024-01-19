@@ -11,6 +11,7 @@ export default function Home() {
   const [filteredHeroes, setFilteredHeroes] = useState<HeroProps[]>(heroes); // State to store filtered heroes based on role
 
   const handleRoleSelect = (role: string) => {
+    setHeroData(undefined)
     setSelectedRole(role);
 
     // If no role is selected, reset to show all heroes
