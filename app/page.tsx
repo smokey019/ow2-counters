@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [heroData, setHeroData] = useState<HeroProps | null>()
-  const [selectedRole, setSelectedRole] = useState<string | undefined>("all"); // State to store selected role
+  const [selectedRole, setSelectedRole] = useState<string>("all"); // State to store selected role
   const [filteredHeroes, setFilteredHeroes] = useState<HeroProps[]>(heroes); // State to store filtered heroes based on role
 
   const handleRoleSelect = (role: string) => {
@@ -16,13 +16,19 @@ export default function Home() {
 
     // If no role is selected, reset to show all heroes
     if (role === 'all') {
+      setSelectedRole("all")
       setFilteredHeroes(heroes);
       return;
     }
 
     // Filter heroes based on the selected role
-    const filtered = heroes.filter(hero => hero.role === role);
-    setFilteredHeroes(filtered);
+    //const filtered = heroes.filter(hero => hero.role === role);
+    //setFilteredHeroes(filtered);
+  }
+
+  const handleHeroSelect = (hero: HeroProps) => {
+    setHeroData(hero)
+    setSelectedRole(hero.role)
   }
 
   const RoleSelect = ({ role }: { role: string }) => (
@@ -49,8 +55,8 @@ export default function Home() {
           {filteredHeroes.map((hero: HeroProps) => (
             <div key={hero.id} className={`w-14 h-14 skew-x-[20deg] overflow-hidden transition-transform transform hover:scale-110 border-2 ${heroData?.id === hero.id ? 'border-accent' : 'border-lightgray'} hover:border-accent shadow-lg shadow-black/10 rounded-lg`}>
               <Image
-                onClick={() => setHeroData(hero)} 
-                className={`object-cover -skew-x-[30deg]`} 
+                onClick={() => handleHeroSelect(hero)} 
+                className={`object-cover -skew-x-[30deg] ${selectedRole === 'all' || selectedRole === hero.role ? 'grayscale-0' : 'grayscale opacity-50'}`} 
                 src={`/images/heroes/${hero.key}.png`} 
                 alt={hero.name}
                 width={56}
