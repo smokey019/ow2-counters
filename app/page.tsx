@@ -60,6 +60,7 @@ export default function Home() {
                   className={`object-cover -skew-x-[30deg] ${selectedRole === 'all' || selectedRole === hero.role ? 'grayscale-0' : 'grayscale opacity-50'}`} 
                   src={`/images/heroes/${hero.key}.png`} 
                   alt={hero.name}
+                  loading='lazy'
                   width={64}
                   height={64}
                 />
@@ -68,46 +69,60 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='bg-accent/10 py-6'>
+      <div className='bg-accent/10 py-4 border-b border-t border-accent/35'>
         <h1 className='text-center text-4xl font-semibold'>
           {heroData ? heroData.name : "Pick a hero!"}
         </h1>
       </div>
-      <div className='w-1/2 mx-auto flex justify-center space-x-12 h-96 py-8'>
+      <div className='w-1/2 mx-auto flex justify-center space-x-12 h-96 py-14'>
         <div className='space-y-6'>
           <div className='flex justify-between space-x-20'>
             <div>
-              <h1 className='w-32 font-semibold text-2xl mb-6 text-accent'>Counters</h1>
-              <div className='space-y-3'>
+              <div className='w-fit font-semibold text-xl mb-8 text-accent border-2 border-accent px-6 py-2 rounded-lg skew-x-[20deg]'>
+                <h1 className='-skew-x-[20deg] text-white'>Counters</h1>
+              </div>
+              <div className='space-y-4 pl-3'>
                 {heroData?.counters.length ? heroData.counters.map((counter) => (
                   <div key={counter.id} className='flex items-center'>
                     <Image
                       alt={heroData.name}
                       src={`/images/heroes/${counter.key}.png`}
                       className='rounded-full mr-2'
-                      width={32}
-                      height={32}
+                      loading='lazy'
+                      width={36}
+                      height={36}
                     />
-                    <p className='font-semibold text-sm'>{counter.name}</p>
+                    <p className='font-semibold'>{counter.name}</p>
                   </div>
-                )) : <p className='opacity-50 font-semibold italic'>None</p>}
+                )) : 
+                  <div className='flex items-center'>
+                    <div className='w-9 h-9 rounded-full bg-lightgray mr-2'/><p className='opacity-50 font-semibold italic'>None</p>
+                  </div>
+                }
               </div>
             </div>
             <div>
-              <h1 className='w-32 font-semibold text-2xl mb-6 text-accent'>Countered</h1>
-              <div className='space-y-3'>
+              <div className='w-fit font-semibold text-xl mb-8 text-accent border-2 border-accent px-6 py-2 rounded-lg skew-x-[20deg]'>
+                <h1 className='-skew-x-[20deg] text-white'>Countered</h1>
+              </div>
+              <div className='space-y-4 pl-3'>
                 {heroData?.countered_by.length ? heroData.countered_by.map((counter) => (
                   <div key={counter.id} className='flex items-center'>
                     <Image
                       alt={heroData.name}
                       src={`/images/heroes/${counter.key}.png`}
                       className='rounded-full mr-2'
-                      width={32}
-                      height={32}
+                      loading='lazy'
+                      width={36}
+                      height={36}
                     />
-                    <p className='font-semibold text-sm'>{counter.name}</p>
+                    <p className='font-semibold'>{counter.name}</p>
                   </div>
-                )) : <p className='opacity-50 font-semibold italic'>None</p>}
+                )) : 
+                  <div className='flex items-center'>
+                    <div className='w-9 h-9 rounded-full bg-lightgray mr-2'/><p className='opacity-50 font-semibold italic'>None</p>
+                  </div>
+                }
               </div>
             </div>
           </div>
