@@ -10,7 +10,7 @@ function MainLayout({ children }: Props) {
     return (
         <div>
             <Header />
-            <main className='w-1/2 mx-auto'>
+            <main>
                 {children}
             </main>
             <Footer />

@@ -5,10 +5,10 @@ type Props = {}
 
 function Header({}: Props) {
     return (
-        <header>
-            <div className='flex justify-between items-center py-8 w-1/2 mx-auto'>
-                <h1 className='font-semibold text-2xl'>
-                    OW2 Counter
+        <header className='bg-lightgray/15'>
+            <div className='flex justify-between items-center py-4 w-1/2 mx-auto'>
+                <h1 className='font-semibold text-2xl text-accent'>
+                    OW2<span className='text-white font-normal ml-1'>Counters</span>
                 </h1>
                 <nav className='space-x-6'>
                     <Link href="/" className='font-semibold hover:text-accent'>
