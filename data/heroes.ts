@@ -28,9 +28,7 @@ export const heroes: HeroProps[] = [
 			{ id: 2, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
 			{ id: 3, key: "ana", name: "Ana", role: "Support", notes: ""},
 		],
-		"countered_by": [
-			{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""}
-		],
+		"countered_by": [],
 		"notes": ""
 	},
 	{
@@ -162,10 +160,8 @@ export const heroes: HeroProps[] = [
 		"name": "Illari",
 		"role": "support",
 		"counters": [],
-		"countered_by": [
-			{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""},
-			{ id: 2, key: "sigma", name: "Sigma", role: "Tank", notes: ""},],
-		"notes": "Characters with big shields can counter Illari's ultimate very well. Reinhardt is ok but not necessarily mobile enough."
+		"countered_by": [],
+		"notes": ""
 	},
 	{
 		"id": 13,
@@ -184,10 +180,8 @@ export const heroes: HeroProps[] = [
 		"counters": [
 			{ id: 1, key: "reinhardt", name: "Reinhardt", role: "Tank", notes: ""},
 		],
-		"countered_by": [
-			{ id: 1, key: "roadhog", name: "Roadhog", role: "Tank", notes: ""},
-			{ id: 2, key: "reaper", name: "Reaper", role: "Damage", notes: ""},],
-		"notes": "Junkrat is a big target. Hitscan works the best against him if he's showing himself a lot."
+		"countered_by": [],
+		"notes": ""
 	},
 	{
 		"id": 15,
@@ -198,7 +192,7 @@ export const heroes: HeroProps[] = [
 			{ id: 1, key: "ana", name: "Ana", role: "Support", notes: ""},
 		],
 		"countered_by": [],
-		"notes": "Kiriko's cleanse counters a lot of heroes. She is almost always a good pick."
+		"notes": ""
 	},
 	{
 		"id": 16,
@@ -214,7 +208,7 @@ export const heroes: HeroProps[] = [
 		"countered_by": [
 			{ id: 1, key: "sombra", name: "Sombra", role: "Damage", notes: ""},
 		],
-		"notes": "Lifeweaver's pull ability counters a lot of ultimates. You can also use flower to raise enemy Orisa into the air while they ult."
+		"notes": ""
 	},
 	{
 		"id": 17,
@@ -226,7 +220,7 @@ export const heroes: HeroProps[] = [
 			{ id: 2, key: "soldier-76", name: "Soldier: 76", role: "Damage", notes: ""},
 		],
 		"countered_by": [],
-		"notes": "Lúcio is great for countering DPS ultimates but his healing falls short of other healers, unless your team is being efficient."
+		"notes": ""
 	},
 	{
 		"id": 18,
@@ -260,9 +254,7 @@ export const heroes: HeroProps[] = [
 		"key": "moira",
 		"name": "Moira",
 		"role": "support",
-		"counters": [
-			{ id: 1, key: "genji", name: "Genji", role: "Damage", notes: ""},
-		],
+		"counters": [],
 		"countered_by": [],
 		"notes": ""
 	},
@@ -298,9 +290,7 @@ export const heroes: HeroProps[] = [
 		"key": "reaper",
 		"name": "Reaper",
 		"role": "damage",
-		"counters": [
-			{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""},
-		],
+		"counters": [],
 		"countered_by": [],
 		"notes": ""
 	},
