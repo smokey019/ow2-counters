@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Overwatch 2 Counters List",
   description:
-    "* Note these are general counters and just because you choose a character's counter doesn't mean you'll automatically win, but it will improve your chances. Don't be that guy.",
+    "* Note these are general counters and just because you choose a character's counter doesn't mean you'll automatically win, but it will improve your chances.",
 };
 
 export default function RootLayout({

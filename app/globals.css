@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --accent-color: theme('colors.accent');
+}
+
+[data-theme='dark'] {
+    --accent-color: theme('colors.secondary');
+}

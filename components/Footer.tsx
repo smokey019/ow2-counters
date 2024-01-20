@@ -1,11 +1,12 @@
 import React from 'react'
+import ThemeSwitch from './ThemeSwitch'
 
 type Props = {}
 
 function Footer({}: Props) {
     return (
-        <div className='w-1/2 mx-auto mt-12 text-sm text-center opacity-40'>
-            The Overwatch heroes&apos; portraits are the property of Blizzard Entertainment.
+        <div className='w-1/2 justify-center'>
+            <p>...</p>
         </div>
     )
 }
