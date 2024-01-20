@@ -1,5 +1,4 @@
 import { HeroProps } from "@/lib/types";
-import heroData from '@/data/heroes.json'
 
 export const heroes: HeroProps[] = [
 	{
@@ -29,7 +28,7 @@ export const heroes: HeroProps[] = [
 			{ id: 2, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
 			{ id: 3, key: "ana", name: "Ana", role: "Support", notes: ""},
 		],
-		"countered_by": [],
+		"countered_by": [{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""}],
 		"notes": ""
 	},
 	{
@@ -140,6 +139,7 @@ export const heroes: HeroProps[] = [
 			{ id: 2, key: "moira", name: "Moira", role: "Support", notes: ""},
 			{ id: 3, key: "winston", name: "Winston", role: "Tank", notes: ""},
 			{ id: 4, key: "zarya", name: "Zarya", role: "Tank", notes: ""},
+			{ id: 5, key: "cassidy", name: "Cassidy", role: "Damage", notes: ""},
 		],
 		"notes": ""
 	},
@@ -152,7 +152,7 @@ export const heroes: HeroProps[] = [
 		"countered_by": [
 			{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""},
 		],
-		"notes": ""
+		"notes": "Hanzo can one shot any character with 200 HP or less. He counters a lot of DPS unless you're aware of the hanzo arrows."
 	},
 	{
 		"id": 12,
@@ -160,8 +160,10 @@ export const heroes: HeroProps[] = [
 		"name": "Illari",
 		"role": "support",
 		"counters": [],
-		"countered_by": [],
-		"notes": ""
+		"countered_by": [
+			{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""},
+			{ id: 2, key: "sigma", name: "Sigma", role: "Tank", notes: ""},],
+		"notes": "Characters with big shields can counter Illari's ultimate very well.  Reinhardt is ok but not necessarily mobile enough."
 	},
 	{
 		"id": 13,
@@ -180,8 +182,10 @@ export const heroes: HeroProps[] = [
 		"counters": [
 			{ id: 1, key: "reinhardt", name: "Reinhardt", role: "Tank", notes: ""},
 		],
-		"countered_by": [],
-		"notes": ""
+		"countered_by": [
+			{ id: 1, key: "roadhog", name: "Roadhog", role: "Tank", notes: ""},
+			{ id: 2, key: "reaper", name: "Reaper", role: "Damage", notes: ""},],
+		"notes": "Junkrat is a big target.  Hitscan works the best against him if he's showing himself a lot."
 	},
 	{
 		"id": 15,
@@ -192,7 +196,7 @@ export const heroes: HeroProps[] = [
 			{ id: 1, key: "ana", name: "Ana", role: "Support", notes: ""},
 		],
 		"countered_by": [],
-		"notes": ""
+		"notes": "Kiriko's cleanse counters a lot of heroes.  She is almost always a good pick."
 	},
 	{
 		"id": 16,
@@ -203,11 +207,12 @@ export const heroes: HeroProps[] = [
 			{ id: 1, key: "zarya", name: "Zarya", role: "Tank", notes: ""},
 			{ id: 2, key: "mauga", name: "Mauga", role: "Tank", notes: ""},
 			{ id: 3, key: "sigma", name: "Sigma", role: "Tank", notes: ""},
+			{ id: 4, key: "orisa", name: "Orisa", role: "Tank", notes: ""},
 		],
 		"countered_by": [
 			{ id: 1, key: "sombra", name: "Sombra", role: "Damage", notes: ""},
 		],
-		"notes": ""
+		"notes": "Lifeweaver's pull ability counters a lot of ultimates.  You can also use flower to raise enemy Orisa into the air while they ult."
 	},
 	{
 		"id": 17,
@@ -219,7 +224,7 @@ export const heroes: HeroProps[] = [
 			{ id: 2, key: "soldier-76", name: "Soldier: 76", role: "Damage", notes: ""},
 		],
 		"countered_by": [],
-		"notes": ""
+		"notes": "Lúcio is great for countering DPS ultimates but his healing falls short of other healers unless your team is being efficient."
 	},
 	{
 		"id": 18,
@@ -253,7 +258,8 @@ export const heroes: HeroProps[] = [
 		"key": "moira",
 		"name": "Moira",
 		"role": "support",
-		"counters": [],
+		"counters": [
+			{ id: 1, key: "genji", name: "Genji", role: "Damage", notes: ""},],
 		"countered_by": [],
 		"notes": ""
 	},
@@ -289,7 +295,8 @@ export const heroes: HeroProps[] = [
 		"key": "reaper",
 		"name": "Reaper",
 		"role": "damage",
-		"counters": [],
+		"counters": [
+			{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""},],
 		"countered_by": [],
 		"notes": ""
 	},
