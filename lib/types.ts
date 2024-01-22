@@ -12,7 +12,5 @@ export type HeroProps = {
 export type HeroCountersProps = {
     id: number
     key: string
-    name: string
-    role: string
     notes: string
 }

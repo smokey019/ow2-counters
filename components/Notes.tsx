@@ -1,15 +1,50 @@
+import { HeroProps } from '@/lib/types'
 import React from 'react'
+import Image from 'next/image'
 
 type Props = {
-    notes: string | undefined
+    hero: HeroProps | null
 }
 
-function Notes({ notes }: Props) {
+function Notes({ hero }: Props) {
     return (
-        <div className='flex justify-center w-1/2 mx-auto'>
-            <div className='text-center'>
-                <h1 className='text-3xl font-semibold mb-2'>Notes</h1>
-                <p className='opacity-50 w-96'>{notes ? notes : 'Nothing but a gust of wind.'}</p>
+        <div className='text-center'>
+            <div>
+                <div key={hero?.id} className='flex justify-center items-center mb-4'>
+                    {hero ?
+                    <>
+                        <Image
+                            alt={hero.name ? hero.name : 'Hero name'}
+                            src={`/images/heroes/${hero.key}.png`}
+                            className='rounded-full mr-4'
+                            loading='lazy'
+                            width={36}
+                            height={36}
+                        />
+                        <h1 className='text-4xl font-semibold'>{hero.name}</h1>
+                    </>
+                    : 
+                    <div className='flex items-center'>
+                        <div className='w-9 h-9 rounded-full bg-lightgray mr-4'/><p className='text-4xl font-semibold'>Hero</p>
+                    </div>
+                    }
+                </div>
+                {hero?.notes ? <p className='opacity-50 w-96'>{hero.notes}</p> 
+                :
+                <div className="flex-1 space-y-4 mt-6 w-80">
+                    <div className="h-2 bg-lightgray rounded"></div>
+                    <div className="space-y-4">
+                        <div className="grid grid-cols-3 gap-5">
+                            <div className="h-2 bg-lightgray rounded col-span-2"></div>
+                            <div className="h-2 bg-lightgray rounded col-span-1"></div>
+                        </div>
+                        <div className="grid grid-cols-3 gap-5">
+                            <div className="h-2 bg-lightgray rounded col-span-1"></div>
+                            <div className="h-2 bg-lightgray rounded col-span-2"></div>
+                        </div>
+                    </div>
+                </div>
+                }
             </div>
         </div>
     )

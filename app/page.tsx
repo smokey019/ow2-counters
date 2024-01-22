@@ -54,9 +54,7 @@ export default function Home() {
         heroData={heroData}
         filteredHeroes={filteredHeroes}
       />
-      <PickAHero />
       <Counters heroData={heroData} />
-      <Notes notes={heroData?.notes} />
     </MainLayout>
   );
 }

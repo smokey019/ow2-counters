@@ -7,16 +7,16 @@ export const heroes: HeroProps[] = [
 		"name": "Ana",
 		"role": "support",
 		"counters": [
-			{ id: 1, key: "roadhog", name: "Roadhog", role: "Tank", notes: ""},
-			{ id: 2, key: "mauga", name: "Mauga", role: "Tank", notes: ""},
-			{ id: 3, key: "winston", name: "Winston", role: "Tank", notes: ""},
+			{ id: 1, key: "roadhog", notes: ""},
+			{ id: 2, key: "mauga", notes: ""},
+			{ id: 3, key: "winston", notes: ""},
 		],
 		"countered_by": [
-			{ id: 1, key: "genji", name: "Genji", role: "Damage", notes: ""},
-			{ id: 2, key: "sombra", name: "Sombra", role: "Damage", notes: ""},
-			{ id: 3, key: "tracer", name: "Tracer", role: "Damage", notes: ""},
-			{ id: 4, key: "dva", name: "D.Va", role: "Tank", notes: ""},
-			{ id: 5, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
+			{ id: 1, key: "genji", notes: ""},
+			{ id: 2, key: "sombra", notes: ""},
+			{ id: 3, key: "tracer", notes: ""},
+			{ id: 4, key: "dva", notes: ""},
+			{ id: 5, key: "widowmaker", notes: ""},
 		],
 		"notes": ""
 	},
@@ -26,15 +26,15 @@ export const heroes: HeroProps[] = [
 		"name": "Ashe",
 		"role": "damage",
 		"counters": [
-			{ id: 1, key: "tracer", name: "Tracer", role: "Damage", notes: "Ashe can 1 shot Tracer in the head. But if you can't aim Tracer will counter you."},
-			{ id: 2, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
-			{ id: 3, key: "ana", name: "Ana", role: "Support", notes: "Ana is an easier target to hit for snipers, but remember Ana can sleep Bob and make him useless for a short period of time."},
+			{ id: 1, key: "tracer", notes: "Ashe can 1 shot Tracer in the head. But if you can't aim Tracer will counter you."},
+			{ id: 2, key: "widowmaker", notes: ""},
+			{ id: 3, key: "ana", notes: "Ana is an easier target to hit for snipers, but remember Ana can sleep Bob and make him useless for a short period of time."},
 		],
 		"countered_by": [
-			{ id: 1, key: "tracer", name: "Tracer", role: "Damage", notes: ""},
-			{ id: 2, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
-			{ id: 3, key: "hanzo", name: "Hanzo", role: "Damage", notes: ""},
-			{ id: 4, key: "reinhardt", name: "Reinhardt", role: "Tank", notes: "Shield helps defend others. Not an absolute counter."},
+			{ id: 1, key: "tracer", notes: ""},
+			{ id: 2, key: "widowmaker", notes: ""},
+			{ id: 3, key: "hanzo", notes: ""},
+			{ id: 4, key: "reinhardt", notes: "Shield helps defend others. Not an absolute counter."},
 		],
 		"notes": ""
 	},
@@ -45,10 +45,10 @@ export const heroes: HeroProps[] = [
 		"role": "support",
 		"counters": [],
 		"countered_by": [
-			{ id: 1, key: "dva", name: "D.Va", role: "Tank", notes: ""},
-			{ id: 2, key: "genji", name: "Genji", role: "Damage", notes: ""},
-			{ id: 3, key: "hanzo", name: "Hanzo", role: "Damage", notes: ""},
-			{ id: 4, key: "roadhog", name: "Roadhog", role: "Tank", notes: ""},
+			{ id: 1, key: "dva", notes: ""},
+			{ id: 2, key: "genji", notes: ""},
+			{ id: 3, key: "hanzo", notes: ""},
+			{ id: 4, key: "roadhog", notes: ""},
 		],
 		"notes": "These aren't hard counters just suggestions.  A good Baptiste shouldn't have too many issues against any hero."
 	},
@@ -58,15 +58,15 @@ export const heroes: HeroProps[] = [
 		"name": "Bastion",
 		"role": "damage",
 		"counters": [
-			{ id: 1, key: "mauga", name: "Mauga", role: "Tank", notes: ""},
-			{ id: 2, key: "roadhog", name: "Roadhog", role: "Tank", notes: ""},
-			{ id: 3, key: "reinhardt",  name: "Reinhardt", role: "Tank", notes: ""},
+			{ id: 1, key: "mauga", notes: ""},
+			{ id: 2, key: "roadhog", notes: ""},
+			{ id: 3, key: "reinhardt", notes: ""},
 		],
 		"countered_by": [
-			{ id: 1, key: "sigma", name: "Sigma", role: "Tank", notes: ""},
-			{ id: 2, key: "dva", name: "D.Va", role: "Tank", notes: ""},
-			{ id: 3, key: "genji", name: "Genji", role: "Damage", notes: ""},
-			{ id: 4, key: "tracer", name: "Tracer", role: "Damage", notes: ""},
+			{ id: 1, key: "sigma", notes: ""},
+			{ id: 2, key: "dva", notes: ""},
+			{ id: 3, key: "genji", notes: ""},
+			{ id: 4, key: "tracer", notes: ""},
 		],
 		"notes": ""
 	},
@@ -76,13 +76,13 @@ export const heroes: HeroProps[] = [
 		"name": "Brigitte",
 		"role": "support",
 		"counters": [
-			{ id: 1, key: "tracer", name: "Tracer", role: "Damage", notes: ""},
-			{ id: 2, key: "genji", name: "Genji", role: "Damage", notes: ""},
+			{ id: 1, key: "tracer", notes: ""},
+			{ id: 2, key: "genji", notes: ""},
 		],
 		"countered_by": [
-			{ id: 1, key: "bastion", name: "Bastion", role: "Damage", notes: ""},
-			{ id: 2, key: "pharah", name: "Pharah", role: "Damage", notes: ""},
-			{ id: 3, key: "junkrat", name: "Junkrat", role: "Damage", notes: ""},
+			{ id: 1, key: "bastion", notes: ""},
+			{ id: 2, key: "pharah", notes: ""},
+			{ id: 3, key: "junkrat", notes: ""},
 		],
 		"notes": "Brigitte is great against assassin characters but you better hope your team can mitigate their damage taken."
 	},
@@ -92,8 +92,8 @@ export const heroes: HeroProps[] = [
 		"name": "Cassidy",
 		"role": "damage",
 		"counters": [
-			{ id: 1, key: "tracer", name: "Tracer", role: "Damage", notes: ""},
-			{ id: 2, key: "moira", name: "Moira", role: "Support", notes: ""},
+			{ id: 1, key: "tracer", notes: ""},
+			{ id: 2, key: "moira", notes: ""},
 		],
 		"countered_by": [],
 		"notes": ""
@@ -104,10 +104,10 @@ export const heroes: HeroProps[] = [
 		"name": "Doomfist",
 		"role": "tank",
 		"counters": [
-			{ id: 1, key: "reinhardt", name: "Reinhardt", role: "Tank", notes: ""},
+			{ id: 1, key: "reinhardt", notes: ""},
 		],
 		"countered_by": [
-			{ id: 1, key: "orisa", name: "Orisa", role: "Tank", notes: ""},
+			{ id: 1, key: "orisa", notes: ""},
 		],
 		"notes": ""
 	},
@@ -117,11 +117,11 @@ export const heroes: HeroProps[] = [
 		"name": "D.Va",
 		"role": "tank",
 		"counters": [
-			{ id: 1, key: "bastion", name: "Bastion", role: "Damage", notes: ""},
+			{ id: 1, key: "bastion", notes: ""},
 		],
 		"countered_by": [
-			{ id: 1, key: "zarya", name: "Zarya", role: "Tank", notes: ""},
-			{ id: 2, key: "symmetra", name: "Symmetra", role: "Damage", notes: ""},
+			{ id: 1, key: "zarya", notes: ""},
+			{ id: 2, key: "symmetra", notes: ""},
 		],
 		"notes": ""
 	},
@@ -131,13 +131,13 @@ export const heroes: HeroProps[] = [
 		"name": "Echo",
 		"role": "damage",
 		"counters": [
-			{ id: 1, key: "pharah", name: "Pharah", role: "Damage", notes: ""},
+			{ id: 1, key: "pharah", notes: ""},
 		],
 		"countered_by": [
-			{ id: 1, key: "bastion", name: "Bastion", role: "Damage", notes: ""},
-			{ id: 2, key: "soldier-76", name: "Soldier: 76", role: "Damage", notes: ""},
-			{ id: 3, key: "cassidy", name: "Cassidy", role: "Damage", notes: ""},
-			{ id: 4, key: "ashe", name: "Ashe", role: "Damage", notes: ""},
+			{ id: 1, key: "bastion", notes: ""},
+			{ id: 2, key: "soldier-76", notes: ""},
+			{ id: 3, key: "cassidy", notes: ""},
+			{ id: 4, key: "ashe", notes: ""},
 		],
 		"notes": ""
 	},
@@ -147,15 +147,15 @@ export const heroes: HeroProps[] = [
 		"name": "Genji",
 		"role": "damage",
 		"counters": [
-			{ id: 1, key: "bastion", name: "Bastion", role: "Damage", notes: ""},
-			{ id: 2, key: "soldier-76", name: "Soldier: 76", role: "Damage", notes: ""},
+			{ id: 1, key: "bastion", notes: ""},
+			{ id: 2, key: "soldier-76", notes: ""},
 		],
 		"countered_by": [
-			{ id: 1, key: "symmetra", name: "Symmetra", role: "Damage", notes: ""},
-			{ id: 2, key: "moira", name: "Moira", role: "Support", notes: ""},
-			{ id: 3, key: "winston", name: "Winston", role: "Tank", notes: ""},
-			{ id: 4, key: "zarya", name: "Zarya", role: "Tank", notes: ""},
-			{ id: 5, key: "cassidy", name: "Cassidy", role: "Damage", notes: ""},
+			{ id: 1, key: "symmetra", notes: ""},
+			{ id: 2, key: "moira", notes: ""},
+			{ id: 3, key: "winston", notes: ""},
+			{ id: 4, key: "zarya", notes: ""},
+			{ id: 5, key: "cassidy", notes: ""},
 		],
 		"notes": ""
 	},
@@ -166,10 +166,10 @@ export const heroes: HeroProps[] = [
 		"role": "damage",
 		"counters": [],
 		"countered_by": [
-			{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""},
-			{ id: 2, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
-			{ id: 3, key: "genji", name: "Genji", role: "Damage", notes: ""},
-			{ id: 4, key: "dva", name: "D.Va", role: "Tank", notes: ""},
+			{ id: 1, key: "winston", notes: ""},
+			{ id: 2, key: "widowmaker", notes: ""},
+			{ id: 3, key: "genji", notes: ""},
+			{ id: 4, key: "dva", notes: ""},
 		],
 		"notes": "Hanzo can one shot any character with 200 HP or less. He counters a lot of DPS unless they're aware of the arrows."
 	},
@@ -197,7 +197,7 @@ export const heroes: HeroProps[] = [
 		"name": "Junkrat",
 		"role": "damage",
 		"counters": [
-			{ id: 1, key: "reinhardt", name: "Reinhardt", role: "Tank", notes: ""},
+			{ id: 1, key: "reinhardt", notes: ""},
 		],
 		"countered_by": [],
 		"notes": ""
@@ -208,7 +208,7 @@ export const heroes: HeroProps[] = [
 		"name": "Kiriko",
 		"role": "support",
 		"counters": [
-			{ id: 1, key: "ana", name: "Ana", role: "Support", notes: ""},
+			{ id: 1, key: "ana", notes: ""},
 		],
 		"countered_by": [],
 		"notes": ""
@@ -219,13 +219,13 @@ export const heroes: HeroProps[] = [
 		"name": "Lifeweaver",
 		"role": "support",
 		"counters": [
-			{ id: 1, key: "zarya", name: "Zarya", role: "Tank", notes: ""},
-			{ id: 2, key: "mauga", name: "Mauga", role: "Tank", notes: ""},
-			{ id: 3, key: "sigma", name: "Sigma", role: "Tank", notes: ""},
-			{ id: 4, key: "orisa", name: "Orisa", role: "Tank", notes: ""},
+			{ id: 1, key: "zarya", notes: ""},
+			{ id: 2, key: "mauga", notes: ""},
+			{ id: 3, key: "sigma", notes: ""},
+			{ id: 4, key: "orisa", notes: ""},
 		],
 		"countered_by": [
-			{ id: 1, key: "sombra", name: "Sombra", role: "Damage", notes: ""},
+			{ id: 1, key: "sombra", notes: ""},
 		],
 		"notes": ""
 	},
@@ -235,8 +235,8 @@ export const heroes: HeroProps[] = [
 		"name": "Lúcio",
 		"role": "support",
 		"counters": [
-			{ id: 1, key: "genji", name: "Genji", role: "Damage", notes: ""},
-			{ id: 2, key: "soldier-76", name: "Soldier: 76", role: "Damage", notes: ""},
+			{ id: 1, key: "genji", notes: ""},
+			{ id: 2, key: "soldier-76", notes: ""},
 		],
 		"countered_by": [],
 		"notes": ""
