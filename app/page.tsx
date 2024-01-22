@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from 'next/navigation';
 import HeroSelect from '@/components/HeroSelect';
 import Counters from '@/components/Counters';
-import Notes from "@/components/Notes";
 
 export default function Home() {
   const searchParams = useSearchParams();
@@ -14,7 +13,7 @@ export default function Home() {
   const [heroData, setHeroData] = useState<HeroProps | null>(null)
   const [selectedRole, setSelectedRole] = useState<string>("all");
   const [filteredHeroes, setFilteredHeroes] = useState<HeroProps[]>(heroes);
-
+  
   useEffect(() => {
     const found_hero = heroes.find(hero => hero.key === hero_param)
     if(!found_hero) return
@@ -36,14 +35,6 @@ export default function Home() {
     setHeroData(hero)
     setSelectedRole(hero.role)
   }
-
-  const PickAHero = () => (
-    <div className='py-4 border-b border-t border-accent/35'>
-      <h1 className='text-center text-4xl font-semibold'>
-        {heroData ? heroData.name : "Pick a hero!"}
-      </h1>
-    </div>
-  )
 
   return (
     <MainLayout>

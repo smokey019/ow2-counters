@@ -1,8 +1,11 @@
 import { HeroProps } from '@/lib/types'
-import React, { FormEventHandler, useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
-import { FaExclamationCircle  } from 'react-icons/fa'
 import { heroes } from '@/data/heroes'
+import fetcher from '@/data/fetcher'
+import { timeAgo } from '@/lib/utils'
+import useSWR from 'swr'
+import { MdOutlineInfo, MdOutlineUpdate } from "react-icons/md";
 
 type Props = {
     handleHeroSelect: (hero: HeroProps) => void;
@@ -20,7 +23,10 @@ function HeroSelect({
     filteredHeroes
 }: Props) {
     const [searchQuery, setSearchQuery] = useState<string>('')
-    
+    const { data, error, isLoading } = useSWR(
+        "api/modified",
+        fetcher
+    )
     const RoleSelect = ({ role }: { role: string }) => (
         <button
             onClick={() => handleRoleSelect(role)}
@@ -63,7 +69,7 @@ function HeroSelect({
     return (
         <div className='bg-lightgray/15 shadow-xl shadow-accent/10'>
             <div className='w-1/2 mx-auto px-20 pt-14 pb-6'>
-                <div className='flex justify-center space-x-4 font-semibold'>
+                <div className='flex justify-center items-center space-x-4 font-semibold'>
                     <RoleSelect role="all" />
                     <RoleSelect role="tank" />
                     <RoleSelect role="support" />
@@ -94,8 +100,15 @@ function HeroSelect({
                     ))}
                 </div>
             </div>
+            <div className='flex items-center justify-center text-center text-sm opacity-50 mt-2 pb-2'>
+                {isLoading ? 
+                    <div className="h-[22px] w-96 rounded-full animate-pulse bg-accent"></div> 
+                : 
+                    <p className='flex items-center'> <MdOutlineUpdate className='h-[22px] w-[22px] mr-1' /> The data was updated {timeAgo(data.lastModifiedDate)}!</p>
+                }
+            </div>
             <div className='flex items-center justify-center text-center text-sm opacity-50 pb-14'>
-                <FaExclamationCircle className='h-4 w-4 mr-2' />
+                <MdOutlineInfo  className='h-[22px] w-[22px] mr-1' />
                 <p>The Overwatch heroes&apos; portraits are the property of Blizzard Entertainment</p>
             </div>
         </div>

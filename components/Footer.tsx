@@ -1,12 +1,7 @@
-import React from 'react'
-import ThemeSwitch from './ThemeSwitch'
-
-type Props = {}
-
-function Footer({}: Props) {
+function Footer() {
     return (
         <div className='w-1/2 mx-auto flex justify-between mt-7'>
-            <h1 className='font-bold text-xl text-gray-400 text-center mb-2'>
+            <h1 className='font-bold text-xl text-gray-400 text-center'>
                 OW2<span className='text-white/50 font-normal ml-1'>Counters</span>
             </h1>
             <div className='flex items-center'>
