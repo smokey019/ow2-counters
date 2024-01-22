@@ -15,6 +15,8 @@ export const heroes: HeroProps[] = [
 			{ id: 1, key: "genji", name: "Genji", role: "Damage", notes: ""},
 			{ id: 2, key: "sombra", name: "Sombra", role: "Damage", notes: ""},
 			{ id: 3, key: "tracer", name: "Tracer", role: "Damage", notes: ""},
+			{ id: 4, key: "dva", name: "D.Va", role: "Tank", notes: ""},
+			{ id: 5, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
 		],
 		"notes": ""
 	},
@@ -24,11 +26,16 @@ export const heroes: HeroProps[] = [
 		"name": "Ashe",
 		"role": "damage",
 		"counters": [
+			{ id: 1, key: "tracer", name: "Tracer", role: "Damage", notes: "Ashe can 1 shot Tracer in the head. But if you can't aim Tracer will counter you."},
+			{ id: 2, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
+			{ id: 3, key: "ana", name: "Ana", role: "Support", notes: "Ana is an easier target to hit for snipers, but remember Ana can sleep Bob and make him useless for a short period of time."},
+		],
+		"countered_by": [
 			{ id: 1, key: "tracer", name: "Tracer", role: "Damage", notes: ""},
 			{ id: 2, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
-			{ id: 3, key: "ana", name: "Ana", role: "Support", notes: ""},
+			{ id: 3, key: "hanzo", name: "Hanzo", role: "Damage", notes: ""},
+			{ id: 4, key: "reinhardt", name: "Reinhardt", role: "Tank", notes: "Shield helps defend others. Not an absolute counter."},
 		],
-		"countered_by": [],
 		"notes": ""
 	},
 	{
@@ -37,8 +44,13 @@ export const heroes: HeroProps[] = [
 		"name": "Baptiste",
 		"role": "support",
 		"counters": [],
-		"countered_by": [],
-		"notes": ""
+		"countered_by": [
+			{ id: 1, key: "dva", name: "D.Va", role: "Tank", notes: ""},
+			{ id: 2, key: "genji", name: "Genji", role: "Damage", notes: ""},
+			{ id: 3, key: "hanzo", name: "Hanzo", role: "Damage", notes: ""},
+			{ id: 4, key: "roadhog", name: "Roadhog", role: "Tank", notes: ""},
+		],
+		"notes": "These aren't hard counters just suggestions.  A good Baptiste shouldn't have too many issues against any hero."
 	},
 	{
 		"id": 4,
@@ -67,8 +79,12 @@ export const heroes: HeroProps[] = [
 			{ id: 1, key: "tracer", name: "Tracer", role: "Damage", notes: ""},
 			{ id: 2, key: "genji", name: "Genji", role: "Damage", notes: ""},
 		],
-		"countered_by": [],
-		"notes": ""
+		"countered_by": [
+			{ id: 1, key: "bastion", name: "Bastion", role: "Damage", notes: ""},
+			{ id: 2, key: "pharah", name: "Pharah", role: "Damage", notes: ""},
+			{ id: 3, key: "junkrat", name: "Junkrat", role: "Damage", notes: ""},
+		],
+		"notes": "Brigitte is great against assassin characters but you better hope your team can mitigate their damage taken."
 	},
 	{
 		"id": 6,
@@ -151,8 +167,11 @@ export const heroes: HeroProps[] = [
 		"counters": [],
 		"countered_by": [
 			{ id: 1, key: "winston", name: "Winston", role: "Tank", notes: ""},
+			{ id: 2, key: "widowmaker", name: "Widowmaker", role: "Damage", notes: ""},
+			{ id: 3, key: "genji", name: "Genji", role: "Damage", notes: ""},
+			{ id: 4, key: "dva", name: "D.Va", role: "Tank", notes: ""},
 		],
-		"notes": "Hanzo can one shot any character with 200 HP or less. He counters a lot of DPS unless you're aware of the hanzo arrows."
+		"notes": "Hanzo can one shot any character with 200 HP or less. He counters a lot of DPS unless they're aware of the arrows."
 	},
 	{
 		"id": 12,
