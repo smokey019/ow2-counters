@@ -103,7 +103,7 @@ function HeroSelect({
                     {!updated_at ? 
                         <div className="h-[22px] w-96 rounded-full animate-pulse bg-accent"></div> 
                     : 
-                        <p className='flex items-center font-semibold italic opacity-50 text-sm'> <MdOutlineUpdate className='hidden lg:block h-[22px] w-[22px] mr-1' /> Last update was: <span className='ml-1'>{updated_at}</span></p>
+                        <p className='flex items-center font-semibold italic opacity-50 text-sm'> <MdOutlineUpdate className='hidden lg:block h-[22px] w-[22px] mr-1' /> Last update: <span className='ml-1'>{updated_at}</span></p>
                     }
                 </div>
                 <div className='flex items-center justify-center text-center text-sm opacity-50 pb-14'>
