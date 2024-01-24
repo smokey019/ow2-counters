@@ -29,9 +29,9 @@ function Notes({ hero }: Props) {
                     </div>
                     }
                 </div>
-                {hero?.notes ? <p className='opacity-50 w-96'>{hero.notes}</p> 
+                {hero?.notes ? <p className='opacity-50 lg:w-96 px-12 lg:px-0 mb-12'>{hero.notes}</p> 
                 :
-                <div className="flex-1 space-y-4 mt-6 w-80">
+                <div className="flex-1 space-y-4 mt-6 w-full lg:w-80 mb-12 lg:mb-0 px-12 lg:px-0">
                     <div className="h-2 bg-lightgray rounded"></div>
                     <div className="space-y-4">
                         <div className="grid grid-cols-3 gap-5">

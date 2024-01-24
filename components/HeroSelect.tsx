@@ -13,6 +13,7 @@ type Props = {
     selectedRole: string;
     heroData: HeroProps | null;
     filteredHeroes: HeroProps[];
+    updated_at: string
 }
 
 function HeroSelect({ 
@@ -20,17 +21,14 @@ function HeroSelect({
     handleRoleSelect, 
     selectedRole,
     heroData,
-    filteredHeroes
+    filteredHeroes,
+    updated_at
 }: Props) {
     const [searchQuery, setSearchQuery] = useState<string>('')
-    const { data, error, isLoading } = useSWR(
-        "api/modified",
-        fetcher
-    )
     const RoleSelect = ({ role }: { role: string }) => (
         <button
             onClick={() => handleRoleSelect(role)}
-            className={`flex items-center ${selectedRole === role ? 'bg-accent' : 'bg-lightgray'} px-4 py-2 rounded-lg skew-x-[20deg]`}
+            className={`flex items-center ${selectedRole === role ? 'bg-accent' : 'bg-lightgray'} px-4 py-2 rounded-lg skew-x-[20deg] w-full lg:w-fit`}
         >
             <span className='-skew-x-[20deg]'>
                 {role.charAt(0).toUpperCase() + role.slice(1)}
@@ -68,8 +66,8 @@ function HeroSelect({
 
     return (
         <div className='bg-lightgray/15 shadow-xl shadow-accent/10'>
-            <div className='w-1/2 mx-auto px-20 pt-14 pb-6'>
-                <div className='flex justify-center items-center space-x-4 font-semibold'>
+            <div className='lg:w-1/2 mx-auto px-20 pt-14 pb-6'>
+                <div className='lg:flex justify-center items-center lg:space-x-4 font-semibold space-y-3 lg:space-y-0'>
                     <RoleSelect role="all" />
                     <RoleSelect role="tank" />
                     <RoleSelect role="support" />
@@ -92,7 +90,7 @@ function HeroSelect({
                             className={`object-cover -skew-x-[30deg] ${selectedRole === 'all' || selectedRole === hero.role ? 'grayscale-0' : 'grayscale opacity-50'}`} 
                             src={`/images/heroes/${hero.key}.png`} 
                             alt={hero.name}
-                            loading='lazy'
+                            priority
                             width={64}
                             height={64}
                             />
@@ -100,16 +98,18 @@ function HeroSelect({
                     ))}
                 </div>
             </div>
-            <div className='flex items-center justify-center text-center text-sm opacity-50 mt-2 pb-2'>
-                {isLoading ? 
-                    <div className="h-[22px] w-96 rounded-full animate-pulse bg-accent"></div> 
-                : 
-                    <p className='flex items-center'> <MdOutlineUpdate className='h-[22px] w-[22px] mr-1' /> The data was updated {timeAgo(data.lastModifiedDate)}!</p>
-                }
-            </div>
-            <div className='flex items-center justify-center text-center text-sm opacity-50 pb-14'>
-                <MdOutlineInfo  className='h-[22px] w-[22px] mr-1' />
-                <p>The Overwatch heroes&apos; portraits are the property of Blizzard Entertainment</p>
+            <div className='px-20'>
+                <div className='flex items-center justify-center text-center mt-2 pb-2'>
+                    {!updated_at ? 
+                        <div className="h-[22px] w-96 rounded-full animate-pulse bg-accent"></div> 
+                    : 
+                        <p className='flex items-center font-semibold italic opacity-50 text-sm'> <MdOutlineUpdate className='hidden lg:block h-[22px] w-[22px] mr-1' /> Last update was: <span className='ml-1'>{updated_at}</span></p>
+                    }
+                </div>
+                <div className='flex items-center justify-center text-center text-sm opacity-50 pb-14'>
+                    <MdOutlineInfo  className='hidden lg:block h-[22px] w-[22px] mr-1' />
+                    <p>The Overwatch heroes&apos; portraits are the property of Blizzard Entertainment</p>
+                </div>
             </div>
         </div>
     )

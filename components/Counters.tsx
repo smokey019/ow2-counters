@@ -19,10 +19,10 @@ function getHeroByKey(key: string) {
 function Counters({ heroData }: Props) {
     return (
         <div className='border-t border-b border-accent bg-black/10 transition-[height] duration-500 ease-in-out'>
-            <div className='w-2/4 mx-auto flex justify-center py-20 space-x-24'>
+            <div className='w-full lg:w-2/4 mx-auto lg:flex justify-center py-20 lg:space-x-24'>
                 <Notes hero={heroData} />
-                <div className='flex space-x-12 border-l-2 border-lightgray/25'>
-                    <div className='pl-24'>
+                <div className='lg:flex lg:space-x-12 lg:border-l-2 border-lightgray/25 px-14 lg:px-0 space-y-12 lg:space-y-0'>
+                    <div className='lg:pl-24'>
                         <div className='w-fit font-semibold text-xl mb-8 border-2 border-accent px-6 py-1 rounded-lg skew-x-[20deg]'>
                             <h1 className='-skew-x-[20deg] text-white'>Counters</h1>
                         </div>
@@ -53,7 +53,7 @@ function Counters({ heroData }: Props) {
                         <div className='w-fit font-semibold text-xl mb-8 border-2 border-accent px-6 py-1 rounded-lg skew-x-[20deg]'>
                             <h1 className='-skew-x-[20deg] text-white w-fit'>Countered by</h1>
                         </div>
-                        <div className='space-y-4 pl-3'>
+                        <div className='space-y-4 lg:pl-3'>
                             {heroData?.countered_by.length ? heroData.countered_by.map((counter) => (
                             <div key={counter.id} className='flex items-center'>
                                 <Image
