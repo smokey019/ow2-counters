@@ -1,8 +1,8 @@
 import React from 'react'
-import Image from 'next/image'
 import { HeroProps } from '@/lib/types'
 import Notes from './Notes';
 import { BsExclamationCircle } from "react-icons/bs";
+import { Tooltip, Image } from "@nextui-org/react";
 import { heroes } from '@/data/heroes'
 
 type Props = {
@@ -14,6 +14,19 @@ function getHeroByKey(key: string) {
     if(foundHero) return foundHero
     // Return null if no hero is found with the given key
     return null;
+}
+
+const HoverNotes = ({ children, content }: { children: JSX.Element, content: string }) => {
+    if(!content) return children
+    return (
+        <Tooltip 
+        content={content}
+        delay={0}
+        closeDelay={0}
+        className='p-3 rounded-lg bg-lightgray text-sm font-semibold w-56'>
+            {children}
+        </Tooltip>
+    )
 }
 
 function Counters({ heroData }: Props) {
@@ -28,20 +41,22 @@ function Counters({ heroData }: Props) {
                         </div>
                         <div className='space-y-4'>
                             {heroData?.counters.length ? heroData.counters.map((counter) => (
-                            <div key={counter.id} className='flex items-center'>
-                                <Image
-                                alt={heroData.name}
-                                src={`/images/heroes/${counter.key}.png`}
-                                className='rounded-full mr-2'
-                                loading='lazy'
-                                width={36}
-                                height={36}
-                                />
-                                <p className='flex font-semibold'>
-                                    {getHeroByKey(counter.key)?.name}
-                                    {counter.notes && <BsExclamationCircle className='ml-2' />}
-                                </p>
-                            </div>
+                            <HoverNotes key={counter.id} content={counter.notes}>
+                                <div className='flex items-center'>
+                                    <Image
+                                        alt={heroData.name}
+                                        src={`/images/heroes/${counter.key}.png`}
+                                        className='rounded-full'
+                                        loading='lazy'
+                                        width={36}
+                                        height={36}
+                                    />
+                                    <p className='ml-2 flex font-semibold select-none'>
+                                        {getHeroByKey(counter.key)?.name}
+                                        {counter.notes && <BsExclamationCircle className='ml-2' />}
+                                    </p>
+                                </div>
+                            </HoverNotes>
                             )) : 
                             <div className='flex items-center'>
                                 <div className='w-9 h-9 rounded-full bg-lightgray mr-2'/><p className='opacity-50 font-semibold italic'>None</p>
@@ -55,20 +70,24 @@ function Counters({ heroData }: Props) {
                         </div>
                         <div className='space-y-4 lg:pl-3'>
                             {heroData?.countered_by.length ? heroData.countered_by.map((counter) => (
-                            <div key={counter.id} className='flex items-center'>
-                                <Image
-                                alt={heroData.name}
-                                src={`/images/heroes/${counter.key}.png`}
-                                className='rounded-full mr-2'
-                                loading='lazy'
-                                width={36}
-                                height={36}
-                                />
-                                <p className='flex font-semibold'>
-                                    {getHeroByKey(counter.key)?.name} 
-                                    {counter.notes && <BsExclamationCircle className='ml-2' />}
-                                </p>
-                            </div>
+                            <HoverNotes key={counter.id} content={counter.notes}>
+                                <div className='flex items-center'>
+                                    <Image
+                                        alt={heroData.name}
+                                        src={`/images/heroes/${counter.key}.png`}
+                                        className='rounded-full'
+                                        loading='lazy'
+                                        width={36}
+                                        height={36}
+                                    />
+                                    <p className='ml-2 flex font-semibold select-none'>
+                                        {getHeroByKey(counter.key)?.name} 
+                                        {counter.notes &&
+                                            <BsExclamationCircle className='ml-2' />
+                                        }
+                                    </p>
+                                </div>
+                            </HoverNotes>
                             )) : 
                             <div className='flex items-center'>
                                 <div className='w-9 h-9 rounded-full bg-lightgray mr-2'/><p className='opacity-50 font-semibold italic'>None</p>

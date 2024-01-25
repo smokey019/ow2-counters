@@ -1,11 +1,9 @@
 import { HeroProps } from '@/lib/types'
 import React, { useState } from 'react'
-import Image from 'next/image'
+import { Image } from '@nextui-org/react'
 import { heroes } from '@/data/heroes'
-import fetcher from '@/data/fetcher'
-import { timeAgo } from '@/lib/utils'
-import useSWR from 'swr'
 import { MdOutlineInfo, MdOutlineUpdate } from "react-icons/md";
+import NextImage from 'next/image'
 
 type Props = {
     handleHeroSelect: (hero: HeroProps) => void;
@@ -86,11 +84,11 @@ function HeroSelect({
                     {filteredHeroes.map((hero: HeroProps) => (
                         <div key={hero.id} className={`fade-in w-16 h-16 skew-x-[20deg] overflow-hidden transition-transform transform hover:scale-110 border-[3px] ${heroData?.id === hero.id ? 'border-accent' : 'border-lightgray'} hover:border-accent shadow-lg shadow-black/10 rounded-lg`}>
                             <Image
+                            as={NextImage}
                             onClick={() => handleHeroSelect(hero)} 
                             className={`object-cover -skew-x-[30deg] ${selectedRole === 'all' || selectedRole === hero.role ? 'grayscale-0' : 'grayscale opacity-50'}`} 
                             src={`/images/heroes/${hero.key}.png`} 
                             alt={hero.name}
-                            priority
                             width={64}
                             height={64}
                             />
@@ -99,7 +97,7 @@ function HeroSelect({
                 </div>
             </div>
             <div className='px-20'>
-                <div className='flex items-center justify-center text-center mt-2 pb-2'>
+                <div className='hidden items-center justify-center text-center mt-2 pb-2'>
                     {!updated_at ? 
                         <div className="h-[22px] w-96 rounded-full animate-pulse bg-accent"></div> 
                     : 

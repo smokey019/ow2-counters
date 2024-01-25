@@ -26,15 +26,15 @@ export const heroes: HeroProps[] = [
 		"name": "Ashe",
 		"role": "damage",
 		"counters": [
-			{ id: 1, key: "tracer", notes: "Ashe can 1 shot Tracer in the head. But if you can't aim Tracer will counter you."},
+			{ id: 1, key: "tracer", notes: "Ashe can one-shot Tracer in the head, but if you can't aim, Tracer will counter you."},
 			{ id: 2, key: "widowmaker", notes: ""},
-			{ id: 3, key: "ana", notes: "Ana is an easier target to hit for snipers, but remember Ana can sleep Bob and make him useless for a short period of time."},
+			{ id: 3, key: "ana", notes: "Ana is an easier target to hit for snipers, but it's important to note that she can sleep Bob and render him useless for a short period of time."},
 		],
 		"countered_by": [
 			{ id: 1, key: "tracer", notes: ""},
 			{ id: 2, key: "widowmaker", notes: ""},
 			{ id: 3, key: "hanzo", notes: ""},
-			{ id: 4, key: "reinhardt", notes: "Shield helps defend others. Not an absolute counter."},
+			{ id: 4, key: "reinhardt", notes: "A shield helps defend others but is not an absolute counter."},
 		],
 		"notes": ""
 	},
@@ -50,7 +50,7 @@ export const heroes: HeroProps[] = [
 			{ id: 3, key: "hanzo", notes: ""},
 			{ id: 4, key: "roadhog", notes: ""},
 		],
-		"notes": "These aren't hard counters just suggestions.  A good Baptiste shouldn't have too many issues against any hero."
+		"notes": "These aren't hard counters, just suggestions. A good Baptiste shouldn't have too many issues against any hero."
 	},
 	{
 		"id": 4,
@@ -84,7 +84,7 @@ export const heroes: HeroProps[] = [
 			{ id: 2, key: "pharah", notes: ""},
 			{ id: 3, key: "junkrat", notes: ""},
 		],
-		"notes": "Brigitte is great against assassin characters but you better hope your team can mitigate their damage taken."
+		"notes": "Brigitte is great against assassin characters, but you better hope your team can mitigate the damage they take."
 	},
 	{
 		"id": 6,
@@ -171,7 +171,7 @@ export const heroes: HeroProps[] = [
 			{ id: 3, key: "genji", notes: ""},
 			{ id: 4, key: "dva", notes: ""},
 		],
-		"notes": "Hanzo can one shot any character with 200 HP or less. He counters a lot of DPS unless they're aware of the arrows."
+		"notes": "Hanzo can one-shot any character with 200 HP or less. He counters many DPS heroes unless they are aware of the arrows."
 	},
 	{
 		"id": 12,
